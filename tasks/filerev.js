@@ -29,7 +29,7 @@ module.exports = function (grunt) {
           var stat = fs.lstatSync(el.dest);
 
           if (stat && !stat.isDirectory()) {
-            grunt.fail.fatal('Destination ' + el.dest  + ' for target ' + target + ' is not a directory');
+            grunt.fail.fatal('Destination ' + el.dest + ' for target ' + target + ' is not a directory');
           }
         } catch (err) {
           grunt.verbose.writeln('Destination dir ' + el.dest + ' does not exists for target ' + target + ': creating');
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
         var newName;
 
         if (typeof options.process === 'function') {
-          newName = options.process(path.basename(file, ext), suffix, ext.slice(1));
+          newName = options.process(path.basename(file, ext), suffix, ext.slice(1), path.dirname(file));
         } else {
           if (options.process) {
             grunt.log.error('options.process must be a function; ignoring');
