@@ -53,7 +53,7 @@ Default: `8`
 
 The number of characters of the file hash to prefix the file name with.
 
-#### options.process(basename, name, extension)
+#### options.process(basename, name, extension, srcDirname)
 
 Type: `function`  
 Default: `null`  
